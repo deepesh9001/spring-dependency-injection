@@ -1,9 +1,6 @@
 package com.springframework.springdependencyinjection;
 
-import com.springframework.springdependencyinjection.controllers.ConstructorInjectedController;
-import com.springframework.springdependencyinjection.controllers.MyController;
-import com.springframework.springdependencyinjection.controllers.PropertyInjectedController;
-import com.springframework.springdependencyinjection.controllers.SetterInjectedController;
+import com.springframework.springdependencyinjection.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -33,6 +30,13 @@ public class SpringDependencyInjectionApplication {
         ConstructorInjectedController constructorInjectedController =
                 (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
         System.out.println(constructorInjectedController.getGreeting());
+
+        System.out.println("----- I18n Greeting -----");
+        I18nController language = (I18nController) ctx.getBean("i18nController");
+        System.out.println(language.sayHello());
+
+
+
 
     }
 
